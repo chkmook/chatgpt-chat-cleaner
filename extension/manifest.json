@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "ChatGPT Chat Cleaner",
+  "version": "0.4.0",
+  "description": "ChatGPT 사이드바에서 선택한 대화를 한 번에 삭제하거나 보관합니다.",
+  "minimum_chrome_version": "111",
+  "action": {
+    "default_title": "대화 선택 켜기·끄기"
+  },
+  "background": { "service_worker": "background.js" },
+  "content_scripts": [{
+    "matches": ["https://chatgpt.com/*"],
+    "js": ["bridge.js"],
+    "world": "MAIN",
+    "run_at": "document_start"
+  }, {
+    "matches": ["https://chatgpt.com/*"],
+    "js": ["core.js", "adapter.js", "api.js", "inline.js", "content.js"],
+    "run_at": "document_idle"
+  }]
+}

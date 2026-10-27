@@ -1,0 +1,18 @@
+dist/
+output/
+.playwright-cli/
+node_modules/
+.DS_Store
+
+# Local plans, browser profiles and machine-specific files
+.planning/
+docs/superpowers/
+.codex/
+.agents/
+.vscode/
+*.log
+.env
+.env.*
+*.pem
+*.key
+*.crx
